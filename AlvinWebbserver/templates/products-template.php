@@ -11,6 +11,7 @@
         <?php
 	        require "masthead.php";
 		    require "menu.php";
+			require "../html/varor.php"
 	    ?>
 		
 		
@@ -29,34 +30,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Äpple</td>
-							<td>Grönt surt</td>
-							<td><img src="bilder/apple.jpg" alt="Grönt surt"></td>
-							<td>50</td>
-							<td><a href="#">Köp</a></td>
-						</tr>
-						<tr>
-							<td>Apelsin</td>
-							<td>Orange söt</td>
-							<td><img src="bilder/orange.jpg" alt="Orange söt"></td>
-							<td>38</td>
-							<td><a href="#">Köp</a></td>
-						</tr>
-						<tr>
-							<td>Päron</td>
-							<td>Gult saftigt</td>
-							<td><img src="bilder/pear.jpg" alt="Gult saftigt"></td>
-							<td>100</td>
-							<td><a href="#">Köp</a></td>
-						</tr>
-						<tr>
-							<td>Banan</td>
-							<td>Gul böjd, smakar banan</td>
-							<td><img src="bilder/banana.jpg" alt="Gul böjd"></td>
-							<td>30</td>
-							<td><a href="#">Köp</a></td>
-						</tr>
+						<?php
+							foreach($varor as $vara)
+							{
+								echo "<tr><td>";
+								echo $vara[0];
+								echo "</td><td>";
+								echo $vara[1];
+								echo "</td><td>";
+								echo "<img src='$vara[3]' alt='$vara[1]'>";
+								echo "</td><td>";
+								echo $vara[2];
+								echo "</td></tr>";
+							}
+						?>
 					</tbody>
 				</table>
 

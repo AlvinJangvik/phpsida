@@ -10,13 +10,28 @@
 		<?php
 	        require "masthead.php";
 		    require "menu.php";
+			require "../html/varor.php"
 	    ?>
 			
 			<main> <!--Huvudinnehåll-->
 				<section id="content">
 					<h2>Varor</h2>
+					
+			<?php
+				foreach($varor as $vara){
+					echo<<<FIGURE
+					<figure><img src="$vara[3]" alt="$vara[1]">
+						<figcaption>$vara[0] $vara[2]
+						<p>
+							<a href="#">Köp</a>
+						</p>
+						</figcation>
+					</figure>
+FIGURE;
+				}
+			?>
           
-            <figure><img src="bilder/apple.jpg" alt="Grönt surt">
+            <!--figure><img src="bilder/apple.jpg" alt="Grönt surt">
                 <figcaption>Äpple 50
                   <p>
                     <a href="#">Köp</a>
@@ -43,7 +58,7 @@
                     <a href="#">Köp</a>
                   </p>
                 </figcation>
-            </figure>
+            </figure-->
             
 			</section>
 				
