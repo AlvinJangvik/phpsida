@@ -12,11 +12,22 @@
      	<?php
 	        require "masthead.php";
 		    require "menu.php";
+			
+			$str="";
+			if(isset($_GET['status'])){
+				if($_GET['status']==1){
+					$str="Felaktig användare";
+				}
+				elseif($_GET['status']==2){
+					$str="Felaktigt lösenord";
+				}
+			}
 	    ?>
 		
 			<main> <!--Huvudinnehåll-->
 				<section>
-					 <form action="" method="post">
+					<p><?php echo $str; ?></p>
+					<form action="login2.php" method="post">
             <p><label for="user">Användarnamn:</label>
             <input type="text" id="user" name="username"></p>
             <p><label for="pwd">Lösenord:</label>
@@ -25,7 +36,7 @@
             <input type="submit" value="Logga in">
             </p>
           </form>
-          <p class="create"><a href="#">Skapa användare</a></p>
+          <p class="create"><a href="createUser.php">Skapa användare</a></p>
 				</section>
 			</main>
 

@@ -1,3 +1,12 @@
+<?php
+	require "../includes/connect.php";
+	
+	$sql = "SELECT * From products";
+	$res = $dbh->prepare($sql);
+	$res->execute();
+	$result = $res->get_result();
+?>
+
 <!DOCTYPE html>
 <html lang="sv">
   <head>
@@ -11,7 +20,7 @@
         <?php
 	        require "masthead.php";
 		    require "menu.php";
-			require "../html/varor.php"
+			// require "../html/varor.php"
 	    ?>
 		
 		
@@ -31,19 +40,20 @@
 					</thead>
 					<tbody>
 						<?php
-							foreach($varor as $vara)
+							while($row = $result ->  fetch_assoc())
 							{
-								echo "<tr><td>";
-								echo $vara[0];
-								echo "</td><td>";
-								echo $vara[1];
-								echo "</td><td>";
-								echo "<img src='$vara[3]' alt='$vara[1]'>";
-								echo "</td><td>";
-								echo $vara[2];
-								echo "</td></tr>";
+								echo <<<TR
+								<tr>
+									<td>{$row['name']}</td>
+									<td>{$row['description']}</td>
+									<td><img src="{$row['picture']}" alt="{$row['description']}"></td>
+									<td>{$row['price']}</td>
+									<td><a href="#">Köp</a></td>
+								</tr>
+TR;
 							}
 						?>
+						</tr>
 					</tbody>
 				</table>
 

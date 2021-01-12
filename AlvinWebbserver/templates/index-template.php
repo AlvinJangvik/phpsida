@@ -7,7 +7,7 @@
 	</head>
   <body id="index">
     <div id="wrapper">
-      <?php
+		<?php
 	        require "masthead.php";
 		    require "menu.php";
 	    ?>
