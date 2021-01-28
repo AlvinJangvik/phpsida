@@ -68,7 +68,9 @@
 	else{
 		echo $str;
 		$str .=<<<FORM
-		<form action="createUser.php" method="post">
+		<form action="{$_SERVER['PHP_SELF']}" method="post">
+		<p><label for="username">Användarnamn:</label>
+        <input type="text" id="username" name="username"></p>
         <p><label for="firstname">Förnamn:</label>
         <input type="text" id="firstname" name="firstname"></p>
 		<p><label for="lastname">Efternamn:</label>
@@ -82,7 +84,7 @@
 		<p><label for="city">Postort:</label>
 		<input type="text" id="city" name="city"></p>
 		<p><label for="nummer">Telefon:</label>
-		<input type="text" id="nummer" name="nummer"></p>
+		<input type="text" id="nummer" name="phone"></p>
 		<p><label for="pwd">Lösenord:</label>
         <input type="password" id="pwd" name="password"></p>
         <p>
