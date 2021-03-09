@@ -38,7 +38,8 @@
 			// echo "Användaren är inloggad"
 			session_start();
 			$_SESSION['username']=$username;
-			header("Location:admin.php");
+			$_SESSION['status']=$row['status'];
+			header("Location:index.php");
 		}
 		else
 		{
