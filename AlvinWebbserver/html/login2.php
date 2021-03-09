@@ -28,7 +28,7 @@
 	if(!$row)
 	{
 		//echo "Avändaren finns inte"
-		header("Location:login.php?status=1");
+		header("Location:login.php?status=3");
 		
 	}
 	else
@@ -39,12 +39,12 @@
 			session_start();
 			$_SESSION['username']=$username;
 			$_SESSION['status']=$row['status'];
-			header("Location:index.php");
+			header("Location:login.php");
 		}
 		else
 		{
 			//echo Felaktigt lösenord
-			header("Location:login.php?status=2");
+			header("Location:login.php?status=4");
 		}
 	}
 ?>
